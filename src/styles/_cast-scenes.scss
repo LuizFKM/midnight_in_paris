@@ -1,30 +1,61 @@
 .cast-scenes {
     padding: 5.6vw;
-    min-height: 50vh; 
+    min-height: 50vh;
 
-    &__tabs{
+
+
+    &__tabs {
         display: flex;
         justify-content: center;
     }
 
     &__item {
         margin: 0 auto;
+        margin-bottom: 1rem;
+        position: relative;
+
+        figcaption {
+        
+                padding: 10px;
+                line-height: 1.5;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                text-align: right;
+                opacity: 0.7;
+
+                .fig-title {
+                    font-size: 3rem;
+                    font-weight: 700;
+                }
+
+                .fig-character {
+                    font-weight: bold;
+                    font-size: 2.0rem;
+                }
+            
+        }
     }
 
     &__actors {
         margin-top: 44px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        
         align-items: center;
 
         img {
+            position: relative;
             width: 40vw;
             height: 20vw;
-            max-width: 80%;
+            max-width: 100%;
             padding-top: 20px;
+            transition: opacity 0.6s;
+
+            &:hover {
+                opacity: .6;
+            }
         }
-        
+
     }
 
     &__button {
@@ -35,7 +66,6 @@
         &--is-active {
             border-bottom: solid;
         }
-        
+
     }
 }
-
