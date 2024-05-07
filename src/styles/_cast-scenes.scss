@@ -1,9 +1,19 @@
+@mixin figcaption(){
+            padding: 20px;
+            line-height: 1.5;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            text-align: right;
+            opacity: 0.9;
+}
+
 .cast-scenes {
     padding: 5.6vw;
-    min-height: 50vh;
+    min-height: 100vh;
     background-color: rgb(31, 25, 20);
     box-shadow: 0px -1px 20px 4px;
-
+    
 
 
     &__tabs {
@@ -17,29 +27,23 @@
         position: relative;
 
         figcaption {
-        
-                padding: 10px;
-                line-height: 1.5;
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                text-align: right;
-                opacity: 0.7;
 
-                .fig-title {
-                    font-size: 1.5rem;
-                    font-weight: 700;
-                }
+            @include figcaption(); 
 
-                .fig-character {
-                    font-weight: bold;
-                    font-size: 1rem;
-                }
-            
+            .fig-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            .fig-character {
+                font-weight: bold;
+                font-size: 1rem;
+            }
+
         }
     }
 
-    &__actors {
+    &__content {
         margin-top: 44px;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -52,7 +56,7 @@
             max-width: 100%;
             padding-top: 20px;
             transition: opacity 0.5s;
-            
+
 
             &:hover {
                 opacity: .3;
@@ -70,5 +74,76 @@
             border-bottom: solid;
         }
 
+    }
+
+    &__director {
+        padding-top: 24px;
+
+        img {
+            width: 16vw;
+        }
+    }
+
+    &__item--bio {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        gap: 40px;
+        box-shadow: 1px -1px 8px 2px;
+        padding: 20px;
+        border-radius: 8px;
+        .text--big {
+            font-size: 20px;
+        }
+
+    }
+
+    
+    &__posters {
+        margin: 0 auto;
+        margin-bottom: 9rem;
+        position: relative;
+        
+
+        figcaption {
+
+            @include figcaption();
+
+            .fig-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #fff;
+            }
+
+            .fig-character {
+                font-weight: bold;
+                font-size: 1rem;
+                color: #fff;
+            }
+
+        }
+        
+    }
+
+    &__movies {
+        padding-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-self: center;
+        
+        
+        
+
+        img {
+            position: relative;
+            width: 16vw;
+            max-width: 100%;
+            transition: opacity 0.5s;
+            
+        &:hover {
+                opacity: .1;
+            }
+        }
     }
 }
