@@ -1,6 +1,8 @@
 .cast-scenes {
     padding: 5.6vw;
     min-height: 50vh;
+    background-color: rgb(31, 25, 20);
+    box-shadow: 0px -1px 20px 4px;
 
 
 
@@ -25,13 +27,13 @@
                 opacity: 0.7;
 
                 .fig-title {
-                    font-size: 3rem;
+                    font-size: 1.5rem;
                     font-weight: 700;
                 }
 
                 .fig-character {
                     font-weight: bold;
-                    font-size: 2.0rem;
+                    font-size: 1rem;
                 }
             
         }
@@ -49,10 +51,11 @@
             height: 20vw;
             max-width: 100%;
             padding-top: 20px;
-            transition: opacity 0.6s;
+            transition: opacity 0.5s;
+            
 
             &:hover {
-                opacity: .6;
+                opacity: .3;
             }
         }
 
