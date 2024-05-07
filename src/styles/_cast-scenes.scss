@@ -1,0 +1,41 @@
+.cast-scenes {
+    padding: 5.6vw;
+    min-height: 50vh; 
+
+    &__tabs{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__item {
+        margin: 0 auto;
+    }
+
+    &__actors {
+        margin-top: 44px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        align-items: center;
+
+        img {
+            width: 40vw;
+            height: 20vw;
+            max-width: 80%;
+            padding-top: 20px;
+        }
+        
+    }
+
+    &__button {
+        background-color: transparent;
+        border: none;
+        margin: 0 1vw;
+
+        &--is-active {
+            border-bottom: solid;
+        }
+        
+    }
+}
+

@@ -1,0 +1,22 @@
+@use 'variaveis' as *;
+
+.sinopse {
+    padding: 5.6vw;
+    min-height: 100vh;
+    background-image:linear-gradient(to bottom, transparent 0%, $corDeFundo 90%), url(../images/cast_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px -8px 10px;
+    display: flex;
+    align-items: flex-end;
+
+    &__content{
+    
+
+    .title--big {
+            text-align: center;
+            font-size: 50px;
+            font-family: Lora;
+        }
+    }
+}
