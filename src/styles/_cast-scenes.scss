@@ -45,9 +45,13 @@
 
     &__content {
         margin-top: 44px;
-        display: grid;
+        display: none;
         grid-template-columns: 1fr 1fr;
         align-items: center;
+
+        &--is-active {
+            display: grid;
+        }
 
         img {
             position: relative;
@@ -77,7 +81,12 @@
     }
 
     &__director {
-        padding-top: 24px;
+        margin-top: 44px;
+        display: none;
+        
+        &--is-active {
+            display: block;
+        }
 
         img {
             width: 16vw;
@@ -128,13 +137,15 @@
 
     &__movies {
         padding-top: 32px;
-        display: grid;
+        display:none;
         grid-template-columns: repeat(3, 1fr);
         align-self: center;
-        
-        
-        
 
+        &--is-active {
+            display: grid;
+        }
+
+        
         img {
             position: relative;
             width: 16vw;
