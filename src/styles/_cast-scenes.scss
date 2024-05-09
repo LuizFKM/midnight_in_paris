@@ -6,7 +6,9 @@
     right: 0;
     text-align: right;
     opacity: 0.9;
-};
+}
+
+;
 
 @mixin imgConfig($width: 40vw, $height: 20vw) {
 
@@ -20,13 +22,16 @@
     &:hover {
         opacity: .3;
     }
-};
+}
+
+;
 
 .cast-scenes {
     padding: 2vw;
     min-height: 100vh;
     background-color: rgb(31, 25, 20);
     box-shadow: 0px -1px 20px 4px;
+
 
     &__button {
         background-color: transparent;
@@ -96,15 +101,30 @@
 
     &__content {
         margin-top: 44px;
-        display: grid;
+        display: none;
         grid-template-columns: 1fr 1fr;
         align-items: center;
 
+        &--is-active {
+            display: grid;
+
+        }
+
+        @media (max-width:768px) {
+            display: none;
+
+            &--is-active {
+                display: none;
+                flex-direction: column;
+            }
+        }
+
+
         &[data-tab-id="diretor"] {
-            display: block;
+            display: none;
 
             .cast-scenes {
-                
+
                 &__item--bio {
                     display: flex;
                     justify-content: space-between;
@@ -113,21 +133,19 @@
                     box-shadow: 1px -1px 8px 2px;
                     padding: 20px;
                     border-radius: 8px;
-    
+
                     img {
                         width: 16vw;
-
-                        
 
                         &:hover {
                             opacity: 1;
                         }
-    
+
                         @media (max-width:768px) {
                             width: 40vw
                         }
                     }
-    
+
                     .text--big {
                         font-size: 20px;
                         text-align: center;
@@ -146,7 +164,6 @@
         }
 
         &--is-active {
-            display: grid;
 
             @media (max-width:768px) {
                 display: flex;
@@ -154,8 +171,9 @@
             }
         }
 
+
         img {
-            @include imgConfig(40vw,20vw);
+            @include imgConfig(40vw, 20vw);
 
 
             @media (max-width:768px) {
@@ -173,16 +191,17 @@
             justify-items: center;
 
             img {
-                @include imgConfig(20vw,30vw);
+                @include imgConfig(20vw, 30vw);
             }
 
             @media (max-width:768px) {
                 display: flex;
                 flex-direction: column;
+
                 img {
-                    @include imgConfig(40vw,56vw);
+                    @include imgConfig(40vw, 56vw);
                 }
-                
+
             }
 
             &--is-active {
@@ -218,26 +237,31 @@
             }
 
             @media (max-width:768px) {
-                .figure{
+                .figure {
                     padding: 20px;
                     text-align: center
-                    
-                };
+                }
+
+                ;
 
                 .fig-title {
                     font-size: 0.9rem;
                     font-weight: 700;
                     line-height: 1.5;
-    
+
 
                 }
 
                 .fig-character {
                     font-weight: bold;
                     font-size: 0.7rem;
-                
+
                 }
             }
         }
     }
-} 
+
+    [data-tab-id="diretor"].cast-scenes__content--is-active {
+        display: block;
+    }
+}
