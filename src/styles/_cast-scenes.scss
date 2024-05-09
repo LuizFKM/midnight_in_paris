@@ -1,19 +1,43 @@
-@mixin figcaption(){
-            padding: 20px;
-            line-height: 1.5;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            text-align: right;
-            opacity: 0.9;
-}
+@mixin figcaption() {
+    padding: 20px;
+    line-height: 1.5;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    opacity: 0.9;
+};
+
+@mixin imgConfig($width: 40vw, $height: 20vw) {
+
+    position: relative;
+    width: $width;
+    height: $height;
+    max-width: 100%;
+    padding-top: 20px;
+    transition: opacity 0.5s;
+
+    &:hover {
+        opacity: .3;
+    }
+};
 
 .cast-scenes {
     padding: 2vw;
     min-height: 100vh;
     background-color: rgb(31, 25, 20);
     box-shadow: 0px -1px 20px 4px;
-    
+
+    &__button {
+        background-color: transparent;
+        border: none;
+        margin: 0 1vw;
+
+        &--is-active {
+            border-bottom: solid;
+        }
+    }
+
 
 
     &__tabs {
@@ -22,7 +46,7 @@
         margin-top: 70px;
         margin-bottom: 30px;
 
-        @media (max-width:768px){
+        @media (max-width:768px) {
             display: block;
             text-align: center;
             padding-top: 16px;
@@ -41,7 +65,7 @@
 
         figcaption {
 
-            @include figcaption(); 
+            @include figcaption();
 
             .fig-title {
                 font-size: 1.5rem;
@@ -53,17 +77,17 @@
                 font-size: 1rem;
             }
 
-            @media (max-width:768px){
-                @include figcaption(); 
+            @media (max-width:768px) {
+                @include figcaption();
 
                 .fig-title {
-                    font-size: 0.5rem;
+                    font-size: 0.9rem;
                     font-weight: 700;
                 }
 
                 .fig-character {
                     font-weight: bold;
-                    font-size: 0.31rem;
+                    font-size: 0.7rem;
                 }
             }
 
@@ -72,103 +96,110 @@
 
     &__content {
         margin-top: 44px;
-        display: none;
+        display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
+
+        &[data-tab-id="diretor"] {
+            display: block;
+
+            .cast-scenes {
+                
+                &__item--bio {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 40px;
+                    box-shadow: 1px -1px 8px 2px;
+                    padding: 20px;
+                    border-radius: 8px;
+    
+                    img {
+                        width: 16vw;
+
+                        
+
+                        &:hover {
+                            opacity: 1;
+                        }
+    
+                        @media (max-width:768px) {
+                            width: 40vw
+                        }
+                    }
+    
+                    .text--big {
+                        font-size: 20px;
+                        text-align: center;
+                    }
+
+                    @media (max-width:768px) {
+                        display: flex;
+                        flex-direction: column;
+
+                        .text--big {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
 
         &--is-active {
             display: grid;
 
-            @media (max-width:768px){
+            @media (max-width:768px) {
                 display: flex;
                 flex-direction: column;
             }
         }
 
         img {
-            position: relative;
-            width: 40vw;
-            height: 20vw;
-            max-width: 100%;
-            padding-top: 20px;
-            transition: opacity 0.5s;
+            @include imgConfig(40vw,20vw);
 
 
-            &:hover {
-                opacity: .3;
-            }
-
-            @media (max-width:768px){
+            @media (max-width:768px) {
                 width: 70vw;
                 height: 50vw;
                 max-width: 100%;
             }
         }
 
-    }
+        &--movies {
+            margin: 0 auto;
+            padding-top: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: center;
 
-    &__button {
-        background-color: transparent;
-        border: none;
-        margin: 0 1vw;
+            img {
+                @include imgConfig(20vw,30vw);
+            }
 
-        &--is-active {
-            border-bottom: solid;
-        }
+            @media (max-width:768px) {
+                display: flex;
+                flex-direction: column;
+                img {
+                    @include imgConfig(40vw,56vw);
+                }
+                
+            }
 
-    }
+            &--is-active {
+                display: grid;
 
-    &__director {
-        margin-top: 44px;
-        display: none;
-        
-        &--is-active {
-            display: block;
-
-            
-        }
-
-        img {
-            width: 16vw;
-
-            @media (max-width:768px){
-                width: 40vw
+                @media (max-width:768px) {
+                    display: flex;
+                    flex-direction: column;
+                }
             }
         }
     }
 
-    &__item--bio {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        text-align: center;
-        gap: 40px;
-        box-shadow: 1px -1px 8px 2px;
-        padding: 20px;
-        border-radius: 8px;
-        .text--big {
-            font-size: 20px;
-        }
-
-        @media (max-width:768px){
-            display: flex;
-            flex-direction: column;
-            padding: 0 auto;
-            .text--big {
-                font-size: 16px;
-            }
-
-
-        }
-
-    }
-
-    
     &__posters {
         margin: 0 auto;
-        margin-bottom: 9rem;
+        margin-bottom: 1rem;
         position: relative;
-        
 
         figcaption {
 
@@ -177,52 +208,36 @@
             .fig-title {
                 font-size: 1.5rem;
                 font-weight: 700;
-                color: #fff;
+                color: #ffffff;
             }
 
             .fig-character {
                 font-weight: bold;
                 font-size: 1rem;
-                color: #fff;
+                color: #ffffff;
             }
 
-        }
-        
-    }
+            @media (max-width:768px) {
+                .figure{
+                    padding: 20px;
+                    text-align: center
+                    
+                };
 
-    &__movies {
-        padding-top: 32px;
-        display:none;
-        grid-template-columns: repeat(3, 1fr);
-        align-self: center;
+                .fig-title {
+                    font-size: 0.9rem;
+                    font-weight: 700;
+                    line-height: 1.5;
+    
 
-        &--is-active {
-            display: grid;
-            
-            @media (max-width:768px){
-                display: flex;
-                flex-direction: column;
-            }
-        }
+                }
 
-        
-        img {
-            position: relative;
-            width: 16vw;
-            max-width: 100%;
-            transition: opacity 0.5s;
-            
-        &:hover {
-                opacity: .1;
-            }
-
-            @media (max-width:768px){
-                display: flex;
-                flex-direction: column;
-                width: 60vw;
-                height: 80vw;
-                max-width: 100%;
+                .fig-character {
+                    font-weight: bold;
+                    font-size: 0.7rem;
+                
+                }
             }
         }
     }
-}
+} 
