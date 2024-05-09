@@ -9,7 +9,7 @@
 }
 
 .cast-scenes {
-    padding: 5.6vw;
+    padding: 2vw;
     min-height: 100vh;
     background-color: rgb(31, 25, 20);
     box-shadow: 0px -1px 20px 4px;
@@ -19,6 +19,19 @@
     &__tabs {
         display: flex;
         justify-content: center;
+        margin-top: 70px;
+        margin-bottom: 30px;
+
+        @media (max-width:768px){
+            display: block;
+            text-align: center;
+            padding-top: 16px;
+            font-size: 10px;
+
+            button {
+                font-size: 16px;
+            }
+        }
     }
 
     &__item {
@@ -40,6 +53,20 @@
                 font-size: 1rem;
             }
 
+            @media (max-width:768px){
+                @include figcaption(); 
+
+                .fig-title {
+                    font-size: 0.5rem;
+                    font-weight: 700;
+                }
+
+                .fig-character {
+                    font-weight: bold;
+                    font-size: 0.31rem;
+                }
+            }
+
         }
     }
 
@@ -51,6 +78,11 @@
 
         &--is-active {
             display: grid;
+
+            @media (max-width:768px){
+                display: flex;
+                flex-direction: column;
+            }
         }
 
         img {
@@ -64,6 +96,12 @@
 
             &:hover {
                 opacity: .3;
+            }
+
+            @media (max-width:768px){
+                width: 70vw;
+                height: 50vw;
+                max-width: 100%;
             }
         }
 
@@ -86,10 +124,16 @@
         
         &--is-active {
             display: block;
+
+            
         }
 
         img {
             width: 16vw;
+
+            @media (max-width:768px){
+                width: 40vw
+            }
         }
     }
 
@@ -104,6 +148,17 @@
         border-radius: 8px;
         .text--big {
             font-size: 20px;
+        }
+
+        @media (max-width:768px){
+            display: flex;
+            flex-direction: column;
+            padding: 0 auto;
+            .text--big {
+                font-size: 16px;
+            }
+
+
         }
 
     }
@@ -143,6 +198,11 @@
 
         &--is-active {
             display: grid;
+            
+            @media (max-width:768px){
+                display: flex;
+                flex-direction: column;
+            }
         }
 
         
@@ -154,6 +214,14 @@
             
         &:hover {
                 opacity: .1;
+            }
+
+            @media (max-width:768px){
+                display: flex;
+                flex-direction: column;
+                width: 60vw;
+                height: 80vw;
+                max-width: 100%;
             }
         }
     }

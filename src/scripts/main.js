@@ -5,18 +5,26 @@ document.addEventListener('DOMContentLoaded', function(){
         buttons[i].addEventListener('click', function(botao){
             const abaAlvo = botao.target.dataset.tabButton;
             const aba = document.querySelector(`[data-tab-id=${abaAlvo}]`);
-            const diretor = document.querySelector(`.cast-scenes__director`);
+            const diretor = document.querySelector(`.cast-scenes__director`)
             const movies = document.querySelector(`.cast-scenes__movies`);
             escondeAbas();
             aba.classList.add('cast-scenes__content--is-active')
             diretor.classList.add('cast-scenes__director--is-active')
             movies.classList.add('cast-scenes__movies--is-active')
+            
             removeBotaoAtivo();
             botao.target.classList.add('cast-scenes__button--is-active');
             
         })
     }
 })
+
+
+
+function toggleMenu() {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('navbar--is-active');
+}
 
 function removeBotaoAtivo(){
     const buttons = document.querySelectorAll('[data-tab-button]');

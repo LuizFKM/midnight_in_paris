@@ -10,11 +10,26 @@
     display: flex;
     align-items: flex-end;
 
+    @media(max-width: 768px){
+        margin: 0 auto;
+        padding: 1rem;
+        min-height: 70vh;
+        background-position-x: right, 46%;
+        background-size: cover;
+        
+    }
     &__content{
     .title--big {
             text-align: center;
             font-size: 20px;
             font-family: Lora;
+
+            @media(max-width: 768px){
+                font-size: 16px;
+                max-width: 90%;
+                text-align: center;
+                
+            }
         }
     }
 }

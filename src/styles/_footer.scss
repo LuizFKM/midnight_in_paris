@@ -1,0 +1,19 @@
+@use 'variaveis' as *;
+
+.footer {
+    padding: 24px;
+    margin: 0 auto;
+    background-color: rgb(31, 25, 20);
+    box-shadow: inset 0px 3px 4px 0px;
+
+    &__content {
+        text-align: center;
+
+        &--info {
+            p {
+                font-weight: bold;
+            }
+        }
+    }
+
+}

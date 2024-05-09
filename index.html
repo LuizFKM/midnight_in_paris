@@ -9,20 +9,25 @@
 <body>
     <header class="header">
         <div class="header__content">
-            <ul>
-                <li class="button--menu">
-                    <a href="#">home</a>
+            <ul class="navbar">
+                <li class="menu-icon">
+                    <a href="javascript:void(0);" onclick="toggleMenu()">&#9776;</a>
                 </li>
-                <li class="button--menu">
-                    <a href="#">sinopse</a>
-                </li>
-                <li class="button--menu">
-                    <a href="#">elenco</a>
-                </li>
+                <div class="navbar__item">
+                    <li class="button--menu">
+                        <a href="#home">home</a>
+                    </li>
+                    <li class="button--menu">
+                        <a href="#sinopse">sinopse</a>
+                    </li>
+                    <li class="button--menu">
+                        <a href="#elenco">elenco</a>
+                    </li>
+                </div>
             </ul>
         </div>
     </header>
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero__content">
             <h1>
                 <img src="./dist/images/logo_hero.png" alt="logo do filme">
@@ -36,7 +41,7 @@
             </div>  
         </div>
     </section>
-    <section class="sinopse">
+    <section class="sinopse" id="sinopse">
         <div class="sinopse__content">
             <p class="title--big">
                 Gil Pender é um jovem escritor em busca da fama. De férias em Paris com sua noiva, ele sai sozinho para explorar a cidade e conhece um grupo de estranhos que são, na verdade, grandes nomes da literatura. Eles levam Gil a uma viagem ao passado e, quanto mais tempo passam juntos, mais o jovem escritor fica insatisfeito com o presente.
@@ -45,7 +50,7 @@
         </div>
     </section>
     
-    <section class="cast-scenes">
+    <section class="cast-scenes" id="elenco">
         <nav class="cast-scenes__tabs">
             <button data-tab-button="elenco" class="cast-scenes__button cast-scenes__button--is-active" >Elenco</button>
             <button data-tab-button="diretor"  class="cast-scenes__button">O diretor</button>
@@ -133,7 +138,7 @@
         <ul data-tab-id="diretor"  class="cast-scenes__director">
             <li class="cast-scenes__item cast-scenes__item--bio">
                 <img src="./dist/images/Woody_Allen.JPG" alt="Allan Stewart Konigsberg ( Woody Allen) ">
-                <p class="text--big">Allan Stewart Konigsberg ( Woody Allen) nasceu em 1º de dezembro de 1935. Diretor, roteirista e comediante americano, é conhecido por seu estilo inteligente e humor neuroticamente engraçado. Seus filmes mais notáveis incluem "Noivo Neurótico, Noiva Nervosa" (1977), "Annie Hall" (1977), "Meia-Noite em Paris" (2011) e "Manhattan" (1979), que capturam suas complexidades relacionais e sua visão única das cidades de Nova York e Paris. Allen se estabeleceu como uma figura lendária no mundo do cinema, com uma carreira prolífica que continua a inspirar e entreter o público. br <br><br> Confira mais de seus filmes a baixo</p>
+                <p class="text--big">Allan Stewart Konigsberg ( Woody Allen) nasceu em 1º de dezembro de 1935. Diretor, roteirista e comediante americano, é conhecido por seu estilo inteligente e humor neuroticamente engraçado. Seus filmes mais notáveis incluem "Noivo Neurótico, Noiva Nervosa" (1977), "Annie Hall" (1977), "Meia-Noite em Paris" (2011) e "Manhattan" (1979), que capturam suas complexidades relacionais e sua visão única das cidades de Nova York e Paris. Allen se estabeleceu como uma figura lendária no mundo do cinema, com uma carreira prolífica que continua a inspirar e entreter o público. br <br><br> Confira mais de seus filmes abaixo</p>
             </li>
         </ul>
         <ul data-tab-id="diretor" class="cast-scenes__movies" >
@@ -221,6 +226,15 @@
                 </li>
             </ul>
         </section>
+        <footer class="footer">
+            <ul class="footer__content">
+                <li class="footer__content--info">
+                    <p class="text">Página para fins de estudo - curso da EBAC</p>
+                    <p class="text">Desenvolvida por Luiz Francisco</p>
+                </li>
+            </ul>
+
+        </footer>
 
         <script src="./dist/js/main.js"></script>
 </body>
